@@ -1,0 +1,36 @@
+{
+    "name": "symfony/css-selector",
+    "type": "library",
+    "description": "Converts CSS selectors to XPath expressions",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Jean-François Simon",
+            "email": "jeanfrancois.simon@sensiolabs.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+<<<<<<< HEAD
+        "php": ">=7.2.5"
+=======
+        "php": ">=7.1.3"
+>>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Component\\CssSelector\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
