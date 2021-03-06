@@ -64,7 +64,7 @@
                 
                 <div class="row row-fit-lg" data-anima="fade-bottom" data-time="1000">
                     <div class="col-lg-12" id="marqueegambar">
-                        <img class="logonya"  src="{{url('public/web/images/kpdp.png')}}" alt="logo" />
+                        <img class="logonya"  src="{{url('web/images/kpdp-white0.png')}}" alt="logo" />
                     </div>
                     <!-- <div class="col-lg-12" id="marquee">
                         <marquee class="marquee">ddsfdsfd dsfdsf dsfdsf dsfdsf dsfdsf dsf dsfdsf dsf </marquee>
@@ -114,20 +114,17 @@
         <section class="section-base" id="section">
             <div class="container">
                 <div class="row align-items-center" data-anima="fade-bottom" data-time="1000">
-                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6">
                         <img src="{{url('public/web/images/calibration-pic-blue-005.jpg')}}" alt="" />
-                    </div>
-                    <div class="col-lg-6">
+                    </div> -->
+                    <div class="col-lg-12">
                         <div class="title">
-                            <p>Callibration Service</p>
+                            <p>LOKASI KAMI</p>
                             
                         </div>
-                        <p>
-                         
-                            Inilah salah satu inovasi kami!
-                            Hubungi kami untuk mendapatkan layanan pengukuran (kalibrasi) dan sewa beban yang akurat.
-                                                </p>
-                        <a href="https://www.krakataucalibration.com/" target="_blank" class="btn btn-xs">Learn more</a>
+                        <div class="map-canvas" id="map_canvas" style="position: relative; overflow: hidden;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.877759743524!2d106.00910831081887!3d-6.011517995646035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418fcc1f9c88ad%3A0xe4afd91a9099e7ad!2sPT.%20KPDP!5e0!3m2!1sid!2sid!4v1614998569444!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div>
                     </div>
                 </div>
                 <hr class="space-sm" />
@@ -154,19 +151,19 @@
                         </div>
                     </div>
                     <div class="col-lg-2">
-                         <img class="ks-group"  src="{{url('public/web/images/ks.png')}}" alt="logo" />
+                         <img class="ks-group"  src="{{url('web/images/ks.png')}}" alt="logo" />
                     </div>
                     <div class="col-lg-2">
-                        <img class="ks-group"  src="{{url('public/web/images/ks-kbs.png')}}" alt="logo" />
+                        <img class="ks-group"  src="{{url('web/images/ks-kbs.png')}}" alt="logo" />
                     </div>
                     <div class="col-lg-2">
-                        <img class="ks-group"  src="{{url('public/web/images/ks-heal.png')}}" alt="logo" />
+                        <img class="ks-group"  src="{{url('web/images/ks-heal.png')}}" alt="logo" />
                     </div>
                     <div class="col-lg-2">
-                        <img class="ks-group"  src="{{url('public/web/images/ks-kwt.png')}}" alt="logo" />
+                        <img class="ks-group"  src="{{url('web/images/ks-kwt.png')}}" alt="logo" />
                     </div>
                     <div class="col-lg-2">
-                        <img class="ks-group"  src="{{url('public/web/images/ks-khi.png')}}" alt="logo" />
+                        <img class="ks-group"  src="{{url('web/images/ks-khi.png')}}" alt="logo" />
                     </div>
                 </div>
             </div>

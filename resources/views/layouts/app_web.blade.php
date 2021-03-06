@@ -185,7 +185,7 @@
             <i class="menu-btn"></i>
             <div class="menu-cnt">
                 <ul id="main-menu">
-                	<li class="dropdown" id="">
+                	<li class="dropdown" id="li-nav">
                         <a href="">About KPdP</a>
                         <ul>
 							<li class=""><a href="{{url('/about?kategori=sekilas')}}">Sekilas KPdP</a></li>
@@ -241,7 +241,7 @@
                     
                 </div>
                 <div class="col-lg-4">
-                    <img class="logonya"  src="{{url('web/images/kpdp.png')}}" alt="logo" /> 
+                    <img class="logonya"  src="{{url('web/images/kpdp-white0.png')}}" alt="logo" /> 
                 </div>
                 <div class="col-lg-4">
                     <h2>Head Office</h2>

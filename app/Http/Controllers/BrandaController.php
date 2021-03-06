@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\About;
 use Illuminate\Http\Request;
 use App\News;
+use App\Struktur;
 use Illuminate\Support\Facades\Crypt;
 class BrandaController extends Controller
 {
@@ -24,6 +25,15 @@ class BrandaController extends Controller
     public function gambar_barner(request $request){
 		$curl = curl_init();
         curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/barner/".$request['file']);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+        $result = curl_exec ($curl);
+        curl_close ($curl);
+        print $result;
+	}
+    public function gambar_struktur(request $request){
+		$curl = curl_init();
+        curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/struktur/".$request['file']);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec ($curl);
@@ -85,5 +95,16 @@ class BrandaController extends Controller
        
         $data=About::where('kategori','kontak')->first();
         return view('kontak',compact('halaman','kategori','data','judul'));
+    }
+
+    public function struktur(request $request){
+        $halaman='Struktur Organisasi';
+        
+        $kategori='Struktur Organisasi';
+    
+        $judul=$kategori;
+       
+        $data=Struktur::orderBy('urut','Asc')->get();
+        return view('struktur',compact('halaman','kategori','data','judul'));
     }
 }
