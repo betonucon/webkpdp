@@ -23,13 +23,10 @@ final class QpContentEncoder implements ContentEncoderInterface
         }
 
         // we don't use PHP stream filters here as the content should be small enough
-<<<<<<< HEAD
-=======
         if (stream_get_meta_data($stream)['seekable'] ?? false) {
             rewind($stream);
         }
 
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
         yield $this->encodeString(stream_get_contents($stream), 'utf-8', 0, $maxLineLength);
     }
 

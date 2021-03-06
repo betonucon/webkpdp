@@ -191,6 +191,7 @@
 							<li class=""><a href="{{url('/about?kategori=sekilas')}}">Sekilas KPdP</a></li>
 							<li class=""><a href="{{url('/about?kategori=visi')}}">Visi Misi& Nilai</a></li>
                             <li class=""><a href="{{url('/about?kategori=corporate')}}">Coorporate Value</a></li>
+                            <li class=""><a href="{{url('/struktur')}}">Struktur Perusahaan</a></li>
                             <li class=""><a href="{{url('/about?kategori=sertifikat')}}">Sertifikat</a>
                             <li class=""><a href="{{url('/about?kategori=sertifikat')}}">Our Strange</a>
 								<ul></ul>

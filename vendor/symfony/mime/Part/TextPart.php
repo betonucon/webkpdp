@@ -28,19 +28,9 @@ class TextPart extends AbstractPart
     private $body;
     private $charset;
     private $subtype;
-<<<<<<< HEAD
-    /**
-     * @var ?string
-     */
     private $disposition;
     private $name;
     private $encoding;
-    private $seekable;
-=======
-    private $disposition;
-    private $name;
-    private $encoding;
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
 
     /**
      * @param resource|string $body
@@ -50,20 +40,12 @@ class TextPart extends AbstractPart
         parent::__construct();
 
         if (!\is_string($body) && !\is_resource($body)) {
-<<<<<<< HEAD
-            throw new \TypeError(sprintf('The body of "%s" must be a string or a resource (got "%s").', self::class, get_debug_type($body)));
-=======
             throw new \TypeError(sprintf('The body of "%s" must be a string or a resource (got "%s").', self::class, \is_object($body) ? \get_class($body) : \gettype($body)));
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
         }
 
         $this->body = $body;
         $this->charset = $charset;
         $this->subtype = $subtype;
-<<<<<<< HEAD
-        $this->seekable = \is_resource($body) ? stream_get_meta_data($body)['seekable'] && 0 === fseek($body, 0, \SEEK_CUR) : null;
-=======
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
 
         if (null === $encoding) {
             $this->encoding = $this->chooseEncoding();
@@ -111,19 +93,11 @@ class TextPart extends AbstractPart
 
     public function getBody(): string
     {
-<<<<<<< HEAD
-        if (null === $this->seekable) {
-            return $this->body;
-        }
-
-        if ($this->seekable) {
-=======
         if (!\is_resource($this->body)) {
             return $this->body;
         }
 
         if (stream_get_meta_data($this->body)['seekable'] ?? false) {
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
             rewind($this->body);
         }
 
@@ -137,13 +111,8 @@ class TextPart extends AbstractPart
 
     public function bodyToIterable(): iterable
     {
-<<<<<<< HEAD
-        if (null !== $this->seekable) {
-            if ($this->seekable) {
-=======
         if (\is_resource($this->body)) {
             if (stream_get_meta_data($this->body)['seekable'] ?? false) {
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
                 rewind($this->body);
             }
             yield from $this->getEncoder()->encodeByteStream($this->body);
@@ -216,11 +185,7 @@ class TextPart extends AbstractPart
     public function __sleep()
     {
         // convert resources to strings for serialization
-<<<<<<< HEAD
-        if (null !== $this->seekable) {
-=======
         if (\is_resource($this->body)) {
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
             $this->body = $this->getBody();
         }
 

@@ -80,13 +80,7 @@ class Message extends RawMessage
             $headers->addMailboxListHeader('From', [$headers->get('Sender')->getAddress()]);
         }
 
-<<<<<<< HEAD
-        if (!$headers->has('MIME-Version')) {
-            $headers->addTextHeader('MIME-Version', '1.0');
-        }
-=======
         $headers->addTextHeader('MIME-Version', '1.0');
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
 
         if (!$headers->has('Date')) {
             $headers->addDateHeader('Date', new \DateTimeImmutable());

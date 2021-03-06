@@ -378,11 +378,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
-     * @return array|DataPart[]
-=======
      * @return DataPart[]
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
      */
     public function getAttachments(): array
     {
@@ -468,10 +464,6 @@ class Email extends Message
         $htmlPart = null;
         $html = $this->html;
         if (null !== $this->html) {
-<<<<<<< HEAD
-            $htmlPart = new TextPart($html, $this->htmlCharset, 'html');
-            $html = $htmlPart->getBody();
-=======
             if (\is_resource($html)) {
                 if (stream_get_meta_data($html)['seekable'] ?? false) {
                     rewind($html);
@@ -480,7 +472,6 @@ class Email extends Message
                 $html = stream_get_contents($html);
             }
             $htmlPart = new TextPart($html, $this->htmlCharset, 'html');
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
             preg_match_all('(<img\s+[^>]*src\s*=\s*(?:([\'"])cid:([^"]+)\\1|cid:([^>\s]+)))i', $html, $names);
             $names = array_filter(array_unique(array_merge($names[2], $names[3])));
         }
@@ -500,10 +491,7 @@ class Email extends Message
                 $attachment['inline'] = true;
                 $inlineParts[$name] = $part = $this->createDataPart($attachment);
                 $html = str_replace('cid:'.$name, 'cid:'.$part->getContentId(), $html);
-<<<<<<< HEAD
                 $part->setName($part->getContentId());
-=======
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
                 continue 2;
             }
             $attachmentParts[] = $this->createDataPart($attachment);
@@ -536,11 +524,7 @@ class Email extends Message
     /**
      * @return $this
      */
-<<<<<<< HEAD
-    private function setHeaderBody(string $type, string $name, $body): object
-=======
     private function setHeaderBody(string $type, string $name, $body)
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
     {
         $this->getHeaders()->setHeaderBody($type, $name, $body);
 
@@ -576,13 +560,6 @@ class Email extends Message
     public function __serialize(): array
     {
         if (\is_resource($this->text)) {
-<<<<<<< HEAD
-            $this->text = (new TextPart($this->text))->getBody();
-        }
-
-        if (\is_resource($this->html)) {
-            $this->html = (new TextPart($this->html))->getBody();
-=======
             if (stream_get_meta_data($this->text)['seekable'] ?? false) {
                 rewind($this->text);
             }
@@ -596,20 +573,15 @@ class Email extends Message
             }
 
             $this->html = stream_get_contents($this->html);
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
         }
 
         foreach ($this->attachments as $i => $attachment) {
             if (isset($attachment['body']) && \is_resource($attachment['body'])) {
-<<<<<<< HEAD
-                $this->attachments[$i]['body'] = (new TextPart($attachment['body']))->getBody();
-=======
                 if (stream_get_meta_data($attachment['body'])['seekable'] ?? false) {
                     rewind($attachment['body']);
                 }
 
                 $this->attachments[$i]['body'] = stream_get_contents($attachment['body']);
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
             }
         }
 
