@@ -34,11 +34,7 @@ final class FormDataPart extends AbstractMultipartPart
 
         foreach ($fields as $name => $value) {
             if (!\is_string($value) && !\is_array($value) && !$value instanceof TextPart) {
-<<<<<<< HEAD
-                throw new InvalidArgumentException(sprintf('A form field value can only be a string, an array, or an instance of TextPart ("%s" given).', get_debug_type($value)));
-=======
                 throw new InvalidArgumentException(sprintf('A form field value can only be a string, an array, or an instance of TextPart ("%s" given).', \is_object($value) ? \get_class($value) : \gettype($value)));
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
             }
 
             $this->fields[$name] = $value;
@@ -62,20 +58,7 @@ final class FormDataPart extends AbstractMultipartPart
         $values = [];
 
         $prepare = function ($item, $key, $root = null) use (&$values, &$prepare) {
-<<<<<<< HEAD
-            if (\is_int($key) && \is_array($item)) {
-                if (1 !== \count($item)) {
-                    throw new InvalidArgumentException(sprintf('Form field values with integer keys can only have one array element, the key being the field name and the value being the field value, %d provided.', \count($item)));
-                }
-
-                $key = key($item);
-                $item = $item[$key];
-            }
-
-            $fieldName = null !== $root ? sprintf('%s[%s]', $root, $key) : $key;
-=======
             $fieldName = $root ? sprintf('%s[%s]', $root, $key) : $key;
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
 
             if (\is_array($item)) {
                 array_walk($item, $prepare, $fieldName);

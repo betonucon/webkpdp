@@ -41,11 +41,7 @@
         "symfony/templating": "^3.4|^4.0|^5.0",
         "symfony/translation": "^4.2|^5.0",
         "symfony/translation-contracts": "^1.1|^2",
-<<<<<<< HEAD
         "psr/cache": "^1.0|^2.0|^3.0",
-=======
-        "psr/cache": "~1.0",
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
         "twig/twig": "^1.43|^2.13|^3.0.4"
     },
     "provide": {

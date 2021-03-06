@@ -97,14 +97,10 @@ final class CharacterStream
             }
         }
         if (\is_resource($input)) {
-<<<<<<< HEAD
-            $blocks = 16372;
-=======
             $blocks = 512;
             if (stream_get_meta_data($input)['seekable'] ?? false) {
                 rewind($input);
             }
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
             while (false !== $read = fread($input, $blocks)) {
                 $this->write($read);
             }

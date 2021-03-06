@@ -89,25 +89,10 @@ final class Address
             return $address;
         }
         if (\is_string($address)) {
-<<<<<<< HEAD
-            if (false === strpos($address, '<')) {
-                return new self($address);
-            }
-
-            if (!preg_match(self::FROM_STRING_PATTERN, $address, $matches)) {
-                throw new InvalidArgumentException(sprintf('Could not parse "%s" to a "%s" instance.', $address, self::class));
-            }
-
-            return new self($matches['addrSpec'], trim($matches['displayName'], ' \'"'));
-        }
-
-        throw new InvalidArgumentException(sprintf('An address can be an instance of Address or a string ("%s" given).', get_debug_type($address)));
-=======
             return self::fromString($address);
         }
 
         throw new InvalidArgumentException(sprintf('An address can be an instance of Address or a string ("%s") given).', \is_object($address) ? \get_class($address) : \gettype($address)));
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
     }
 
     /**
@@ -125,28 +110,14 @@ final class Address
         return $addrs;
     }
 
-<<<<<<< HEAD
-    /**
-     * @deprecated since Symfony 5.2, use "create()" instead.
-     */
     public static function fromString(string $string): self
     {
-        trigger_deprecation('symfony/mime', '5.2', '"%s()" is deprecated, use "%s::create()" instead.', __METHOD__, __CLASS__);
-
-=======
-    public static function fromString(string $string): self
-    {
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
         if (false === strpos($string, '<')) {
             return new self($string, '');
         }
 
         if (!preg_match(self::FROM_STRING_PATTERN, $string, $matches)) {
-<<<<<<< HEAD
-            throw new InvalidArgumentException(sprintf('Could not parse "%s" to a "%s" instance.', $string, self::class));
-=======
             throw new InvalidArgumentException(sprintf('Could not parse "%s" to a "%s" instance.', $string, static::class));
->>>>>>> a9c2424ca209e3fea7296f84174602f6176da211
         }
 
         return new self($matches['addrSpec'], trim($matches['displayName'], ' \'"'));
