@@ -31,11 +31,14 @@
             }
             body{
                 background-image: linear-gradient(to right top, #eef2f9, #e0e6fb, #d8d8fb, #d6c9f7, #dab8f0);
+                
             }
             body > nav .menu-brand .logonya{
                 width:100%;
                 max-height: none;
                 display: block;
+                
+                
             }
             #barner-ok{
                 padding: 0% 4% 0% 4%;
@@ -62,20 +65,23 @@
             }
             #marqueegambar{
                 margin-bottom:2%;
-                background:#3e3e4e;
+                background:#008080;
                 padding-top:2%;
                 padding-left:35%;
                 padding-right:35%;
             }
             .menu-top-logo > .container > .menu-brand, .menu-top-logo .menu-right{
-                right:0%;
+                right:35%;
                 width:100%;
-                text-align: center;
+                text-align: left;
                 padding-left: 38%;
                 padding-right: 38%;
                 padding-top:4%;
                 padding-bottom:2%;
-            }
+                
+                
+                
+            }   
             .navi{
                 background: #729c1e;
             }
@@ -174,13 +180,10 @@
 	</style>
     <body>
     <div id="preloader"></div>
-    <nav class="menu-top-logo menu-fixed" data-menu-anima="fade-in" style="background-image: linear-gradient(to right top, #3d4e6b, #0f313e, #1e6c71, #698e84, #4d5d4a);">
+    <nav class="menu-top-logo menu-fixed" data-menu-anima="fade-in">
         <div class="container">
             <div class="menu-brand">
-               
-                    <img class="logonya"  src="{{url('web/images/kpdp-white0.png')}}" alt="logo" />
-                    
-               
+               <img class="logonya"  src="{{url('web/images/kpdp-white0.png')}}" alt="logo" />
             </div>
             <i class="menu-btn"></i>
             <div class="menu-cnt">
