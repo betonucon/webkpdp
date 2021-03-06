@@ -15,7 +15,7 @@ class BrandaController extends Controller
 
     public function gambar_news(request $request){
 		$curl = curl_init();
-        curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/news/".$request['file']);
+        curl_setopt ($curl, CURLOPT_URL, "".link_server()."file/news/".$request['file']);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec ($curl);
@@ -24,7 +24,7 @@ class BrandaController extends Controller
 	}
     public function gambar_barner(request $request){
 		$curl = curl_init();
-        curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/barner/".$request['file']);
+        curl_setopt ($curl, CURLOPT_URL, "".link_server()."file/barner/".$request['file']);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec ($curl);
@@ -33,7 +33,7 @@ class BrandaController extends Controller
 	}
     public function gambar_struktur(request $request){
 		$curl = curl_init();
-        curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/struktur/".$request['file']);
+        curl_setopt ($curl, CURLOPT_URL, "".link_server()."file/struktur/".$request['file']);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec ($curl);
@@ -42,7 +42,7 @@ class BrandaController extends Controller
 	}
     public function gambar_pengumuman(request $request){
 		$curl = curl_init();
-        curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/pengumuman/".$request['file']);
+        curl_setopt ($curl, CURLOPT_URL, "".link_server()."file/pengumuman/".$request['file']);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec ($curl);
@@ -51,7 +51,7 @@ class BrandaController extends Controller
 	}
     public function gambar_produk(request $request){
 		$curl = curl_init();
-        curl_setopt ($curl, CURLOPT_URL, "".link_server()."/public/file/produk/".$request['file']);
+        curl_setopt ($curl, CURLOPT_URL, "".link_server()."file/produk/".$request['file']);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec ($curl);

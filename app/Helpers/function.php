@@ -5,7 +5,7 @@ function url_linknya(){
     return $data;
 }
 function link_server(){
-    $data='http://localhost/kpdp/kpdp';
+    $data='http://admin.kreasiteknologi.com/';
     return $data;
 }
 
